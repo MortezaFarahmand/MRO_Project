@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net70</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\0_Framework\0_Framework.csproj" />
+    <ProjectReference Include="..\OrganizationManagement.Application.Contracts\OrganizationManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

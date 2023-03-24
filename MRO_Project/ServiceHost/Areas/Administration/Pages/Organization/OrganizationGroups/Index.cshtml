@@ -1,0 +1,99 @@
+﻿@page
+@model ServiceHost.Areas.Administration.Pages.Organization.OrganizationGroups.OrganizationGroupsModel
+
+@{
+    Layout = "Shared/_AdminLayout";
+    ViewData["title"] = "Organization Group(Type) Management";
+}
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title pull-right">@ViewData["title"]</h4>
+        <p class="pull-left">
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")" >Create New Group</a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Search in Organization Group(Type)</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" role="form" method="get">
+                    <div class="form-group"  >
+                        <label class="sr-only" asp-for="SearchModel.Name" ></label>
+                        <input class="form-control" asp-for="SearchModel.Name" placeholder="Organization Group Name">
+                        <label class="sr-only col-lg-12" asp-for="SearchModel.Description" ></label>
+                        <input class="form-control" asp-for="SearchModel.Description" placeholder="Organization Group Description">
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">Search</button>
+                    <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">View All</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="OrganizationGroupDiv">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Organization group list</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table id="datatable" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    @*<th>Image</th>*@
+                                    <th>Name</th>
+                                    <th>Descreption</th>
+                                    <th>Creation Date</th>
+                                    <th>Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrganizationGroups)
+                                {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    @*<td>
+                                          <img src="~/ProductPictures/@item.Picture" style="width: 70px; height: 70px" />
+                                      </td>*@
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>
+                                        <a class="btn btn-warning pull-right m-rl-5"
+                                           href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})">
+                                            <i class="fa fa-edit"></i> ویرایش
+                                        </a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/AdminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/AdminTheme/assets/datatables/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
+    </script>
+}
