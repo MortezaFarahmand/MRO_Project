@@ -179,7 +179,7 @@
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> Organization Settings </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-mail"></i><span>Organization Settings</span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Organization/OrganizationGroups/Index">Organization Group</a></li>
                         <li><a href="email-compose.html">Country</a></li>
@@ -343,7 +343,7 @@
     <!-- var resizefunc = []; -->
     <!-- </script> -->
     <!-- jQuery  -->
-    <script src="~/AdminTheme/assets/js/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/AdminTheme/assets/js/bootstrap.min.js"></script>
     <script src="~/AdminTheme/assets/js/waves.js"></script>
     <script src="~/AdminTheme/assets/js/wow.min.js"></script>
@@ -374,7 +374,7 @@
     <script src="~/AdminTheme/assets/counterup/waypoints.min.js" type="text/javascript"></script>
     <script src="~/AdminTheme/assets/counterup/jquery.counterup.min.js" type="text/javascript"></script>
 
-@RenderSection("Scripts", false)
+
 
     <!-- CUSTOM JS -->
     <script src="~/AdminTheme/assets/js/jquery.app.js"></script>
@@ -387,9 +387,14 @@
 
     <!-- Todo -->
     <script src="~/AdminTheme/assets/js/jquery.todo.js"></script>
+
     
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script/>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script/>
 
     <script src="~/AdminTheme/assets/js/site.js"></script>
+
+    @RenderSection("Scripts", false)
 
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->

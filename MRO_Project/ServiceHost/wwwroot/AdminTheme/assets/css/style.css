@@ -52,11 +52,30 @@ Date: Jun 2015
  18) RESPONSIVE
 */
 
-@import url(http://fonts.googleapis.com/css?family=Nunito:400,300,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
+/*@import url(http://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);*/
 
 
+@font-face {
+    font-family: 'Nunito';
+    src: url('../../fonts/Nunito.eot'), url('../../fonts/Nunito.eot') format('embedded-opentype'), url('../../fonts/Nunito.woff') format('woff'), url('../../fonts/Nunito.ttf') format('truetype'), url('../../fonts/Nunito.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fonts/Roboto.eot'), url('../../fonts/Roboto.eot') format('embedded-opentype'), url('../../fonts/Roboto.woff') format('woff'), url('../../fonts/Roboto.ttf') format('truetype'), url('../../fonts/Roboto.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranianSans';
+    src: url('../../fonts/IranianSans.eot'), url('../../fonts/IranianSans.eot') format('embedded-opentype'), url('../../fonts/IranianSans.woff') format('woff'), url('../../fonts/IranianSans.ttf') format('truetype'), url('../../fonts/IranianSans.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /******** 1. General ********/
 
@@ -3358,4 +3377,132 @@ div.dataTables_info {
   .container-alt {
     width: 1170px;
   }
+}
+
+
+
+
+
+th {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .navbar-right .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+        float: left;
+    }
+
+    .form-group {
+        margin-left: 5px;
+    }
+
+    .m-5 {
+        margin: 5px !important;
+    }
+
+    .m-tb-5 {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .m-rl-5 {
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+
+    .close {
+        float: right !important;
+    }
+}
+
+#blinking-versions {
+    background-color: #004A7F;
+    -webkit-border-radius: 10px;
+    border-radius: 2px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+@-webkit-keyframes glowing {
+    0% {
+        background-color: #B20000;
+        -webkit-box-shadow: 0 0 3px #B20000;
+    }
+
+    50% {
+        background-color: #FF0000;
+        -webkit-box-shadow: 0 0 40px #FF0000;
+    }
+
+    100% {
+        background-color: #B20000;
+        -webkit-box-shadow: 0 0 3px #B20000;
+    }
+}
+
+@-moz-keyframes glowing {
+    0% {
+        background-color: #B20000;
+        -moz-box-shadow: 0 0 3px #B20000;
+    }
+
+    50% {
+        background-color: #FF0000;
+        -moz-box-shadow: 0 0 40px #FF0000;
+    }
+
+    100% {
+        background-color: #B20000;
+        -moz-box-shadow: 0 0 3px #B20000;
+    }
+}
+
+@-o-keyframes glowing {
+    0% {
+        background-color: #B20000;
+        box-shadow: 0 0 3px #B20000;
+    }
+
+    50% {
+        background-color: #FF0000;
+        box-shadow: 0 0 40px #FF0000;
+    }
+
+    100% {
+        background-color: #B20000;
+        box-shadow: 0 0 3px #B20000;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        background-color: #B20000;
+        box-shadow: 0 0 3px #B20000;
+    }
+
+    50% {
+        background-color: #FF0000;
+        box-shadow: 0 0 40px #FF0000;
+    }
+
+    100% {
+        background-color: #B20000;
+        box-shadow: 0 0 3px #B20000;
+    }
 }

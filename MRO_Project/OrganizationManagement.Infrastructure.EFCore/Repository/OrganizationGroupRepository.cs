@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using _0_Framework.Infrastructure;
 using OrganizationManagement.Application.Contracts.OrganizationGroup;
 using OrganizationManagement.Domain.OrganizationGroupAgg;
@@ -25,7 +24,9 @@ namespace OrganizationManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Name = x.Name,
-                Description =x.Description
+                Description =x.Description,
+                Picture=x.Picture,
+                NameCode=x.NameCode
                 
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -35,8 +36,10 @@ namespace OrganizationManagement.Infrastructure.EFCore.Repository
             var query = _context.OrganizationGroups.Select(x => new OrganizationGroupViewModel()
             {
                 Id = x.Id,
+                Picture=x.Picture,
                 Name = x.Name,
                 Description = x.Description,
+                NameCode = x.NameCode,
                 CreationDate = x.CreationDate.ToString()
 
             });

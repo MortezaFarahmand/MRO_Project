@@ -22,7 +22,7 @@ namespace OrganizationManagement.Application
             if (_organizationGroupRepository.Exists(x=>x.Name==command.Name))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
 
-            var organizationGroup = new OrganizationGroup(command.Name, command.Description);
+            var organizationGroup = new OrganizationGroup(command.Name, command.Description, command.Picture, command.NameCode);
 
             _organizationGroupRepository.Create(organizationGroup);
             _organizationGroupRepository.SaveChanges();
@@ -39,7 +39,7 @@ namespace OrganizationManagement.Application
             if(_organizationGroupRepository.Exists(x=>x.Name==command.Name && x.Id != command.Id))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
 
-            organizationGroup.Edit(command.Name,command.Description);
+            organizationGroup.Edit(command.Name,command.Description, command.Picture, command.NameCode);
 
             _organizationGroupRepository.SaveChanges();
             return operation.Succeeded();
