@@ -25,6 +25,7 @@ namespace OrganizationManagement.Domain.OrganizationAgg
         public string CompanyRegisterNo { get; private set; }
         public DateTime FormedDate { get; private set; }
         public long ParentId { get; private set; }
+        public bool IsActive { get; private set; }
         public string LogoPicture { get; private set; }
         public string LogoPictureAlt { get; private set; }
         public string LogoPictureTitle { get; private set; }
@@ -32,14 +33,16 @@ namespace OrganizationManagement.Domain.OrganizationAgg
         public string Slug { get; private set; }
         public string CanonicalAddress { get; private set; }
         public string Keywords { get; private set; }
+        public long OrganizationGroupId { get; private set; }   
         //Approval List<Approval>
         public OrganizationGroup Group { get; private set; }
 
+
         public Organization(string nameEn, string nameFa, string descriptionEn, string descriptionFa, string addressEn,
             string addressFa, string tel1, string tel2, string fax, string webSite, string socialAddress1, string socialAddress2,
-            string mailBox, string note, string remark, long organizationAviationCodeId, string companyRegisterNo, string formedDate,
-        long parentId, string logoPicture, string logoPictureAlt, string logoPictureTitle, string metaDescription, string slug,
-            string canonicalAddress, string keywords)
+            string mailBox, string note, string remark, long organizationAviationCodeId, string companyRegisterNo, DateTime formedDate,
+            long parentId, string logoPicture, string logoPictureAlt, string logoPictureTitle, string metaDescription, string slug,
+            string canonicalAddress, string keywords, long organizationGroupId)
         {
             NameEn = nameEn;
             NameFa = nameFa;
@@ -58,7 +61,43 @@ namespace OrganizationManagement.Domain.OrganizationAgg
             Remark = remark;
             OrganizationAviationCodeId = organizationAviationCodeId;
             CompanyRegisterNo = companyRegisterNo;
-            //FormedDate = formedDate;
+            FormedDate = formedDate;
+            ParentId = parentId;
+            IsActive = true;
+            LogoPicture = logoPicture;
+            LogoPictureAlt = logoPictureAlt;
+            LogoPictureTitle = logoPictureTitle;
+            MetaDescription = metaDescription;
+            Slug = slug;
+            CanonicalAddress = canonicalAddress;
+            Keywords = keywords;
+            OrganizationGroupId = organizationGroupId;
+        }
+
+        public void Edit(string nameEn, string nameFa, string descriptionEn, string descriptionFa, string addressEn,
+            string addressFa, string tel1, string tel2, string fax, string webSite, string socialAddress1, string socialAddress2,
+            string mailBox, string note, string remark, long organizationAviationCodeId, string companyRegisterNo, DateTime formedDate,
+        long parentId, string logoPicture, string logoPictureAlt, string logoPictureTitle, string metaDescription, string slug,
+            string canonicalAddress, string keywords, long organizationGroupId)
+        {
+            NameEn = nameEn;
+            NameFa = nameFa;
+            DescriptionEn = descriptionEn;
+            DescriptionFa = descriptionFa;
+            AddressEn = addressEn;
+            AddressFa = addressFa;
+            Tel1 = tel1;
+            Tel2 = tel2;
+            Fax = fax;
+            WebSite = webSite;
+            SocialAddress1 = socialAddress1;
+            SocialAddress2 = socialAddress2;
+            MailBox = mailBox;
+            Note = note;
+            Remark = remark;
+            OrganizationAviationCodeId = organizationAviationCodeId;
+            CompanyRegisterNo = companyRegisterNo;
+            FormedDate = formedDate;
             ParentId = parentId;
             LogoPicture = logoPicture;
             LogoPictureAlt = logoPictureAlt;
@@ -67,6 +106,18 @@ namespace OrganizationManagement.Domain.OrganizationAgg
             Slug = slug;
             CanonicalAddress = canonicalAddress;
             Keywords = keywords;
+            OrganizationGroupId= organizationGroupId;
         }
+
+        public void Active()
+        {
+            IsActive = true;
+        }
+
+        public void NotActive()
+        {
+            IsActive = false;
+        }
+
     }
 }

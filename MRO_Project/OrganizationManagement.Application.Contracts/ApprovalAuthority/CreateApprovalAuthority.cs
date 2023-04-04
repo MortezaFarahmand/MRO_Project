@@ -1,9 +1,9 @@
 ﻿
 using System;
 
-namespace OrganizationManagement.Application.Contracts.ApprovalAutority
+namespace OrganizationManagement.Application.Contracts.ApprovalAuthority
 {
-    public class CreateApprovalAutority
+    public class CreateApprovalAuthority
     {
         public string NameEn { get; set; }
         public string NameFa { get; set; }
@@ -21,12 +21,12 @@ namespace OrganizationManagement.Application.Contracts.ApprovalAutority
         public string Keywords { get; set; }
     }
 
-    public class EditApprovalAutority : CreateApprovalAutority
+    public class EditApprovalAuthority : CreateApprovalAuthority
     {
         public long Id { get; set; }
     }
 
-    public class ApprovalAutorityViewModel
+    public class ApprovalAuthorityViewModel
     {
         public string NameEn { get; set; }
         public string NameFa { get; set; }
@@ -44,7 +44,7 @@ namespace OrganizationManagement.Application.Contracts.ApprovalAutority
         public string Keywords { get; set; }
     }
 
-    public class ApprovalAutoritySearchModel
+    public class ApprovalAuthoritySearchModel
     {
         public string NameEn { get; set; }
         public string NameFa { get; set; }

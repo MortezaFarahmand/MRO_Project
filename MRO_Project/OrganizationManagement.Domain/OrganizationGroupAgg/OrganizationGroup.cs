@@ -1,4 +1,6 @@
 ﻿using _0_Framework.Domain;
+using OrganizationManagement.Domain.OrganizationAgg;
+using System.Collections.Generic;
 
 namespace OrganizationManagement.Domain.OrganizationGroupAgg
 {
@@ -13,12 +15,12 @@ namespace OrganizationManagement.Domain.OrganizationGroupAgg
         //public string Keywords { get;  set; }
         //public string MetaDescription { get;  set; }
         //public string Slug { get;  set; }
-        //public List<Organization> Organizations { get;  set; }
+        public List<Organization> Organizations { get; private set; }
 
-        //public OrganizationGroup()
-        //{
-        //    Organizations = new List<Organization>();
-        //}
+        public OrganizationGroup()
+        {
+            Organizations = new List<Organization>();
+        }
 
         public OrganizationGroup(string name, string description, string picture, string nameCode)
         {

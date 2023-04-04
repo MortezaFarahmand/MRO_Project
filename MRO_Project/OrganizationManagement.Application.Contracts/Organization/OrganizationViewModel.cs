@@ -1,8 +1,11 @@
 ﻿
+using System;
+
 namespace OrganizationManagement.Application.Contracts.Organization
 {
-    public class CreateOrganization
+    public class OrganizationViewModel
     {
+        public long Id { get; set; }
         public string NameEn { get; set; }
         public string NameFa { get; set; }
         public string DescriptionEn { get; set; }
@@ -18,18 +21,15 @@ namespace OrganizationManagement.Application.Contracts.Organization
         public string MailBox { get; set; }
         public string Note { get; set; }
         public string Remark { get; set; }
-        public long OrganizationAviationCodeId { get; set; }
         public string CompanyRegisterNo { get; set; }
         public string FormedDate { get; set; }
-        public long ParentId { get; set; }
+        public DateTime FormedDateGr { get; set; }
         public string LogoPicture { get; set; }
-        public string LogoPictureAlt { get; set; }
-        public string LogoPictureTitle { get; set; }
-        public string MetaDescription { get; set; }
-        public string Slug { get; set; }
-        public string CanonicalAddress { get; set; }
-        public string Keywords { get; set; }
+        public long ParentId { get; set; } // public string Parent { get; set; }
+        public long OrganizationAviationCodeId { get; set; }  //public string OrganizationAviationCode { get; set; }
+        public string Group { get; set; }
         public long OrganizationGroupId { get; set; }
-
+        public string CreationDate { get; set; }
+        //public string Country { get; set; }
     }
 }

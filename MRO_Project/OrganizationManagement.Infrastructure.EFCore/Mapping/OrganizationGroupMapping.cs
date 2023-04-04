@@ -20,6 +20,10 @@ namespace OrganizationManagement.Infrastructure.EFCore.Mapping
             //builder.Property(x=>x.Keywords).HasMaxLength(100).IsRequired();
             //builder.Property(x=>x.MetaDescription).HasMaxLength(150).IsRequired();
             //builder.Property(x=>x.Slug).HasMaxLength(500).IsRequired(); 
+
+            builder.HasMany(x=>x.Organizations)
+                .WithOne(x=>x.Group)
+                .HasForeignKey(x=>x.OrganizationGroupId);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace OrganizationManagement.Application
         {
             var operation = new OperationResult();
             if (_organizationGroupRepository.Exists(x=>x.Name==command.Name))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var organizationGroup = new OrganizationGroup(command.Name, command.Description, command.Picture, command.NameCode);
 
@@ -34,10 +34,10 @@ namespace OrganizationManagement.Application
             var operation = new OperationResult();
             var organizationGroup = _organizationGroupRepository.Get(command.Id);
             if (organizationGroup == null)
-                return operation.Failed("رکورد با اطلاعات دریافت شده یافت نشد");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
 
             if(_organizationGroupRepository.Exists(x=>x.Name==command.Name && x.Id != command.Id))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             organizationGroup.Edit(command.Name,command.Description, command.Picture, command.NameCode);
 
@@ -49,6 +49,11 @@ namespace OrganizationManagement.Application
         public EditOrganizationGroup GetDetails(long id)
         {
             return _organizationGroupRepository.GetDetails(id);
+        }
+
+        public List<OrganizationGroupViewModel> GetOrganizationGroups()
+        {
+            return _organizationGroupRepository.GetOrganizationGroups();
         }
 
         public List<OrganizationGroupViewModel> Search(OrganizationGroupSearchModel searchModel)

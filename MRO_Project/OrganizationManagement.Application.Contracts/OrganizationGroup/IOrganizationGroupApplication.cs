@@ -8,6 +8,7 @@ namespace OrganizationManagement.Application.Contracts.OrganizationGroup
         OperationResult Create(CreateOrganizationGroup command);
         OperationResult Edit(EditOrganizationGroup command);
         EditOrganizationGroup GetDetails(long id);
+        List<OrganizationGroupViewModel> GetOrganizationGroups();
         List<OrganizationGroupViewModel> Search(OrganizationGroupSearchModel searchModel);
     }
 }
