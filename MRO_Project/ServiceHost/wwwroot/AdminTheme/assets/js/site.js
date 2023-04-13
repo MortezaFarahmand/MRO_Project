@@ -36,7 +36,8 @@ $(document).ready(function () {
         function () {
             window.location.hash = "##";
             $('.persianDateInput').persianDatepicker({
-                format: 'YYYY/MM/DD',
+                format: 'DD/MM/YYYY',
+                calendarType: 'gregorian',
                 autoClose: true
             });
         });

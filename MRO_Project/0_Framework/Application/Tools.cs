@@ -115,9 +115,9 @@ namespace _0_Framework.Application
         public static DateTime ToGeorgianDateTimeEn(this string englishDate)
         {
             englishDate = englishDate.ToEnglishNumber();
-            var year = Convert.ToInt32(englishDate.Substring(0, 4));
-            var month = Convert.ToInt32(englishDate.Substring(5, 2));
-            var day = Convert.ToInt32(englishDate.Substring(8, 2));
+            var year = Convert.ToInt32(englishDate.Substring(6, 4));
+            var month = Convert.ToInt32(englishDate.Substring(3, 2));
+            var day = Convert.ToInt32(englishDate.Substring(0, 2));
             return new DateTime(year, month, day, new GregorianCalendar());
         }
     }

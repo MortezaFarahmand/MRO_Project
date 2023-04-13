@@ -22,6 +22,8 @@
     <!-- animate css -->
     <link href="~/AdminTheme/assets/css/animate.css" rel="stylesheet" />
 
+    <link href="~/AdminTheme/assets/modal-effect/css/component.css" rel="stylesheet" />
+
     <!-- Waves-effect -->
     <link href="~/AdminTheme/assets/css/waves-effect.css" rel="stylesheet">
 
@@ -32,6 +34,8 @@
     <link href="~/AdminTheme/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 
     <!-- Custom Files -->
+    <link href="~/AdminTheme/assets/css/persian-datepicker.min.css" rel="stylesheet" /> 
+
     <link href="~/AdminTheme/assets/css/helper.css" rel="stylesheet" type="text/css" />
     <link href="~/AdminTheme/assets/css/style.css" rel="stylesheet" type="text/css" />
     <script src="~/AdminTheme/assets/js/modernizr.min.js"></script>
@@ -327,11 +331,14 @@
 </div>
 <!-- /Right-bar -->
 </div>
+@*style="width:75%;"*@
 
-<div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content" id="ModalContent">
+<div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true" style="display: none; padding-right: 17px;" >
 
+    <div class="modal-dialog modal-lg"  >
+        <div class="modal-content" id="ModalContent" >
+           
 
 
         </div>
@@ -395,7 +402,18 @@
 
     <script src="~/AdminTheme/assets/js/site.js"></script>
 
+    <script src="~/AdminTheme/assets/js/persian-date.min.js"></script>
+    <script src="~/AdminTheme/assets/js/persian-datepicker.min.js"></script>
+
     @RenderSection("Scripts", false)
+
+
+    <script >
+        $('.persianDateInput').persianDatepicker ({
+          format: "DD/MM/YYYY", 
+          autoClose: true
+        });
+    </script>
 
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->

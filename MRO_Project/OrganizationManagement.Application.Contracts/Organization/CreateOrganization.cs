@@ -1,4 +1,7 @@
 ﻿
+using OrganizationManagement.Application.Contracts.OrganizationGroup;
+using System.Collections.Generic;
+
 namespace OrganizationManagement.Application.Contracts.Organization
 {
     public class CreateOrganization
@@ -30,6 +33,7 @@ namespace OrganizationManagement.Application.Contracts.Organization
         public string CanonicalAddress { get; set; }
         public string Keywords { get; set; }
         public long OrganizationGroupId { get; set; }
+        public List<OrganizationGroupViewModel> Groups { get; set; }
 
     }
 }

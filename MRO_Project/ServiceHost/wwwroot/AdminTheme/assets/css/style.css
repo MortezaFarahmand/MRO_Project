@@ -945,6 +945,14 @@ a:focus {
   padding-left: 10px !important;
 }
 
+.md-effect-6.md-modal {
+    -webkit-perspective: 1300px;
+    -moz-perspective: 1300px;
+    perspective: 1300px;
+}
+
+
+
 /* 2.13 Alerts */
 .alert-success {
   color: #33b86c;

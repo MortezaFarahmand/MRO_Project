@@ -32,7 +32,11 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
 
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", new CreateOrganization());
+            var command = new CreateOrganization();
+            {
+                command.Groups = _organizationGroupApplication.GetOrganizationGroups();
+            }
+            return Partial("./Create", command);
         }
 
         public JsonResult OnPostCreate(CreateOrganization command)
@@ -44,6 +48,7 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
         public IActionResult OnGetEdit(long id)
         {
             var organization = _organizationApplication.GetDetails(id);
+            organization.Groups= _organizationGroupApplication.GetOrganizationGroups(); 
             return Partial("Edit", organization);
         }
 
