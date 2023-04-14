@@ -9,6 +9,8 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
 {
     public class OrganizationsModel : PageModel
     {
+        [TempData]
+        public string Message { get; set; }
         public OrganizationSearchModel SearchModel;
         public List<OrganizationViewModel> Organizations;
         public SelectList OrganizationGroups;
@@ -56,6 +58,24 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
         {
             var result = _organizationApplication.Edit(command);
             return new JsonResult(result);
+        }
+
+        public IActionResult OnGetNotActive(long id)
+        {
+            var result =  _organizationApplication.NotActive(id); 
+            if(result.IsSucceeded)
+                return RedirectToPage("./Index");
+            Message = result.Message;
+            return RedirectToPage("./Index");
+        }
+
+        public IActionResult OnGetIsActive(long id)
+        {
+            var result = _organizationApplication.Active(id);
+            if (result.IsSucceeded)
+                return RedirectToPage("./Index");
+            Message = result.Message;
+            return RedirectToPage("./Index");
         }
     }
 }

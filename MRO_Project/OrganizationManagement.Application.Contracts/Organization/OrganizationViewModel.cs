@@ -30,6 +30,7 @@ namespace OrganizationManagement.Application.Contracts.Organization
         public string Group { get; set; }
         public long OrganizationGroupId { get; set; }
         public string CreationDate { get; set; }
+        public bool IsActive { get; set; }
         //public string Country { get; set; }
     }
 }

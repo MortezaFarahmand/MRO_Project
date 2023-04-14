@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group  element-dir-Fa">
                     <label asp-for="NameFa" class="control-label">نام</label>
                     <input type="text" class="form-control" asp-for="NameFa">
                     <span asp-validation-for="NameFa" class="error"></span>
@@ -52,8 +52,8 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="DescriptionFa" class="control-label">توضیحات</label>
+                <div class="form-group  element-dir-Fa">
+                    <label asp-for="DescriptionFa" class="control-label" style="font-family:IranianSans">توضیحات</label>
                     <textarea class="form-control autogrow" asp-for="DescriptionFa" 
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 75px;"></textarea>
                     <span asp-validation-for="DescriptionFa" class="error"></span>
@@ -65,7 +65,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="OrganizationGroupId" class="control-label">Organization Group</label>
-                    <select type="text" class="form-control" asp-items='new SelectList(Model.Groups, "Id", "Name")'>
+                    <select type="text" class="form-control" asp-for="OrganizationGroupId"
+                           asp-items='new SelectList(Model.Groups, "Id", "Name")'>
                         <option value="0">-Organization Group-</option>
                     </select>
                     <span asp-validation-for="OrganizationGroupId" class="error"></span>
@@ -96,7 +97,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
+                <div class="form-group element-dir-Fa">
                     <label asp-for="AddressFa" class="control-label">آدرس</label>
                         <textarea class="form-control autogrow" asp-for="AddressFa"
                                   style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 75px;"></textarea>

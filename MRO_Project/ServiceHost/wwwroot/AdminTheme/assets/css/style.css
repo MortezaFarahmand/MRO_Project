@@ -17,6 +17,7 @@ Date: Jun 2015
     2.4 Background Colors
     2.5 text color
     2.6 text input
+        2.6.1 textInputFa
     2.7 Labels
     2.8 Badge
     2.9 Pagination
@@ -618,9 +619,17 @@ a:focus {
   box-shadow: none;
 }
 
+.element-dir-Fa {
+    font-family: 'IranianSans', sans-serif;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: right;
+}
+
+
 /* 2.7 Labels */
 .label-primary {
-  background-color: #1e88e5;
+    background-color: #1e88e5;
 }
 .label-success {
   background-color: #33b86c;

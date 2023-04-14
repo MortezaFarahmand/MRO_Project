@@ -1,14 +1,21 @@
 ﻿
+using _0_Framework.Application;
 using OrganizationManagement.Application.Contracts.OrganizationGroup;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrganizationManagement.Application.Contracts.Organization
 {
     public class CreateOrganization
     {
+        [Required(ErrorMessage =ValidationMessages.IsRequired)]
         public string NameEn { get; set; }
+
         public string NameFa { get; set; }
+
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string DescriptionEn { get; set; }
+
         public string DescriptionFa { get; set; }
         public string AddressEn { get; set; }
         public string AddressFa { get; set; }
@@ -32,7 +39,10 @@ namespace OrganizationManagement.Application.Contracts.Organization
         public string Slug { get; set; }
         public string CanonicalAddress { get; set; }
         public string Keywords { get; set; }
+
+        [Range(1, 100000, ErrorMessage = ValidationMessages.IsRequired)]
         public long OrganizationGroupId { get; set; }
+
         public List<OrganizationGroupViewModel> Groups { get; set; }
 
     }

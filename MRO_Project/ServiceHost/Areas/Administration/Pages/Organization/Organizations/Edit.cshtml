@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group element-dir-Fa">
                     <label asp-for="NameFa" class="control-label">نام</label>
                     <input type="text" class="form-control" asp-for="NameFa">
                     <span asp-validation-for="NameFa" class="error"></span>
@@ -46,7 +46,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
+                <div class="form-group element-dir-Fa">
                     <label asp-for="DescriptionFa" class="control-label">توضیحات</label>
                     <textarea class="form-control autogrow" asp-for="DescriptionFa"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 75px;"></textarea>
@@ -59,7 +59,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="OrganizationGroupId" class="control-label">Organization Group</label>
-                    <select type="text" class="form-control" asp-items='new SelectList(Model.Groups, "Id", "Name")'>
+                    <select type="text" class="form-control" asp-for="OrganizationGroupId" 
+                                    asp-items='new SelectList(Model.Groups, "Id", "Name")'>
                         <option value="0">-Organization Group-</option>
                     </select>
                     <span asp-validation-for="OrganizationGroupId" class="error"></span>
@@ -90,7 +91,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group">
+                <div class="form-group element-dir-Fa">
                     <label asp-for="AddressFa" class="control-label">آدرس</label>
                     <textarea class="form-control autogrow" asp-for="AddressFa"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 75px;"></textarea>
@@ -141,8 +142,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label asp-for="FormedDate" class="control-label">Formed Date</label>
-                    <input type="text" class="form-control" asp-for="FormedDate">
-                    <span asp-validation-for="FormedDate" class="error"></span>
+                 <div class="input-group">
+                     <input class="form-control persianDateInput"  asp-for="FormedDate">
+                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                 </div> 
+                 <span asp-validation-for="FormedDate" class="error"></span>
                 </div>
             </div>
         </div>

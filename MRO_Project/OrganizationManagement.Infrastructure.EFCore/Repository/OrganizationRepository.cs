@@ -52,6 +52,7 @@ namespace OrganizationManagement.Infrastructure.EFCore.Repository
                 CanonicalAddress = x.CanonicalAddress,
                 Keywords = x.Keywords,
                 OrganizationGroupId = x.OrganizationGroupId
+                
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -85,7 +86,8 @@ namespace OrganizationManagement.Infrastructure.EFCore.Repository
                     OrganizationAviationCodeId = x.OrganizationAviationCodeId,
                     Group = x.Group.Name,
                     OrganizationGroupId = x.OrganizationGroupId,
-                    CreationDate = x.CreationDate.ToString()
+                    CreationDate = x.CreationDate.ToString(),
+                    IsActive = x.IsActive
                 });
 
             if (!string.IsNullOrWhiteSpace(searchModel.NameEn))
