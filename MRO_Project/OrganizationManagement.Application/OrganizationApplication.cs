@@ -1,15 +1,7 @@
 ﻿using _0_Framework.Application;
 using OrganizationManagement.Application.Contracts.Organization;
 using OrganizationManagement.Domain.OrganizationAgg;
-using OrganizationManagement.Domain.OrganizationAviationCodeAgg;
-using OrganizationManagement.Domain.OrganizationGroupAgg;
-using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace OrganizationManagement.Application
 {
@@ -99,6 +91,11 @@ namespace OrganizationManagement.Application
         public List<OrganizationViewModel> Search(OrganizationSearchModel searchModel)
         {
             return _organizationRepository.Search(searchModel);
+        }
+
+        public List<OrganizationViewModel> GetOrganizations()
+        {
+            return _organizationRepository.GetOrganizations();
         }
     }
 }

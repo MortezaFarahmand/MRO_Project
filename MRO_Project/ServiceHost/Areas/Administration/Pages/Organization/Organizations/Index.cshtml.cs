@@ -7,7 +7,7 @@ using OrganizationManagement.Application.Contracts.OrganizationGroup;
 
 namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
 {
-    public class OrganizationsModel : PageModel
+    public class IndexModel : PageModel
     {
         [TempData]
         public string Message { get; set; }
@@ -18,7 +18,7 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.Organizations
         private readonly IOrganizationApplication _organizationApplication;
         private readonly IOrganizationGroupApplication _organizationGroupApplication;
 
-        public OrganizationsModel(IOrganizationApplication organizationApplication, IOrganizationGroupApplication organizationGroupApplication)
+        public IndexModel(IOrganizationApplication organizationApplication, IOrganizationGroupApplication organizationGroupApplication)
         {
             _organizationApplication = organizationApplication;
             _organizationGroupApplication = organizationGroupApplication;

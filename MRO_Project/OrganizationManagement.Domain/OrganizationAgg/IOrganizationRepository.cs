@@ -7,6 +7,7 @@ namespace OrganizationManagement.Domain.OrganizationAgg
     public interface IOrganizationRepository : IRepository<long, Organization>
     {
         EditOrganization GetDetails(long id);
+        List<OrganizationViewModel> GetOrganizations();
         List<OrganizationViewModel> Search(OrganizationSearchModel searchModel);
     }
 }

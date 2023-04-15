@@ -1,6 +1,8 @@
 ﻿using _0_Framework.Domain;
 using OrganizationManagement.Domain.OrganizationGroupAgg;
+using OrganizationManagement.Domain.OrganizationPictureAgg;
 using System;
+using System.Collections.Generic;
 
 namespace OrganizationManagement.Domain.OrganizationAgg
 {
@@ -36,6 +38,8 @@ namespace OrganizationManagement.Domain.OrganizationAgg
         public long OrganizationGroupId { get; private set; }   
         //Approval List<Approval>
         public OrganizationGroup Group { get; private set; }
+        public List<OrganizationPicture> OrganizationPictures { get; private set; }
+
 
 
         public Organization(string nameEn, string nameFa, string descriptionEn, string descriptionFa, string addressEn,

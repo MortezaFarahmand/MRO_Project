@@ -11,6 +11,7 @@ namespace OrganizationManagement.Application.Contracts.Organization
         OperationResult Active(long id);
         OperationResult NotActive(long id);
         EditOrganization GetDetails(long id);
+        List<OrganizationViewModel> GetOrganizations();
         List<OrganizationViewModel> Search(OrganizationSearchModel searchModel);
     }
 }

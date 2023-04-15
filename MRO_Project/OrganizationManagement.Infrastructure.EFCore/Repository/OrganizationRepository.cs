@@ -56,6 +56,15 @@ namespace OrganizationManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
+        public List<OrganizationViewModel> GetOrganizations()
+        {
+            return _context.Organizations.Select(x => new OrganizationViewModel
+            {
+                Id = x.Id,
+                NameEn = x.NameEn
+            }).ToList();
+        }
+
         public List<OrganizationViewModel> Search(OrganizationSearchModel searchModel)
         {
             var query = _context.Organizations
