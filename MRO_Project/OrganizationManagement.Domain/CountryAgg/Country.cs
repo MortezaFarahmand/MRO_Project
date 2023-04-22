@@ -13,6 +13,13 @@ namespace OrganizationManagement.Domain.CountryAgg
         public string Picture { get; private set; }
         public string TailCode { get; private set; }
 
+        //public List<Organization> Organizations { get; private set; }
+
+        //public OrganizationGroup()
+        //{
+        //    Organizations = new List<Organization>();
+        //}
+
         public Country(string name, string alpha2Code, string alpha3Code, string uNCode,
             string dialCode, string picture, string tailCode)
         {
@@ -21,6 +28,20 @@ namespace OrganizationManagement.Domain.CountryAgg
             Alpha3Code = alpha3Code;
             UNCode = uNCode;
             DialCode = dialCode;
+            Picture = picture;
+            TailCode = tailCode;
+        }
+
+        public void Edit(string name, string alpha2Code, string alpha3Code, string uNCode,
+           string dialCode, string picture, string tailCode)
+        {
+            Name = name;
+            Alpha2Code = alpha2Code;
+            Alpha3Code = alpha3Code;
+            UNCode = uNCode;
+            DialCode = dialCode;
+            if (!string.IsNullOrWhiteSpace(picture))
+                Picture = picture;
             Picture = picture;
             TailCode = tailCode;
         }

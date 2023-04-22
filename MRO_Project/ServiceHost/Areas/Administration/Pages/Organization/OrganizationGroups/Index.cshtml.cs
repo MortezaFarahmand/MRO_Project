@@ -5,13 +5,13 @@ using OrganizationManagement.Application.Contracts.OrganizationGroup;
 
 namespace ServiceHost.Areas.Administration.Pages.Organization.OrganizationGroups
 {
-    public class OrganizationGroupsModel : PageModel
+    public class IndexModel : PageModel
     {
         public OrganizationGroupSearchModel SearchModel;
         public List<OrganizationGroupViewModel> OrganizationGroups;
         private readonly IOrganizationGroupApplication _organizationGroupApplication;
 
-        public OrganizationGroupsModel(IOrganizationGroupApplication organizationGroupApplication)
+        public IndexModel(IOrganizationGroupApplication organizationGroupApplication)
         {
             _organizationGroupApplication = organizationGroupApplication;
         }

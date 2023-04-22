@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OrganizationManagement.Domain.CountryAgg;
 using OrganizationManagement.Domain.OrganizationAgg;
 using OrganizationManagement.Domain.OrganizationGroupAgg;
 using OrganizationManagement.Domain.OrganizationPictureAgg;
+using OrganizationManagement.Domain.SlideAgg;
 using OrganizationManagement.Infrastructure.EFCore.Mapping;
 
 namespace OrganizationManagement.Infrastructure.EFCore
@@ -11,6 +13,8 @@ namespace OrganizationManagement.Infrastructure.EFCore
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<OrganizationGroup> OrganizationGroups { get; set; }
         public DbSet<OrganizationPicture> OrganizationPictures { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+        public DbSet<Country> Countrys { get; set; }
 
 
         public OrganizationContext(DbContextOptions<OrganizationContext> options) : base(options)

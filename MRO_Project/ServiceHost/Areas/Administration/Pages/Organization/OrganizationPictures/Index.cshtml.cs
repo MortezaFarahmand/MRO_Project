@@ -49,9 +49,9 @@ namespace ServiceHost.Areas.Administration.Pages.Organization.OrganizationPictur
 
         public IActionResult OnGetEdit(long id)
         {
-            var organization = _organizationPictureApplication.GetDetails(id);
-            organization.Organizations = _organizationApplication.GetOrganizations(); 
-            return Partial("Edit", organization);
+            var organizationPicture = _organizationPictureApplication.GetDetails(id);
+            organizationPicture.Organizations = _organizationApplication.GetOrganizations(); 
+            return Partial("Edit", organizationPicture);
         }
 
         public JsonResult OnPostEdit(EditOrganizationPicture command)
